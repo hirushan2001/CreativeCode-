@@ -16,7 +16,7 @@ function App() {
     <div className="bg-[#141414] min-h-screen text-white font-sans selection:bg-custom-primaryPurple/35 selection:text-white select-none relative overflow-x-clip">
       
       {/* Dynamic simulated cursors flying over page content */}
-      <MultiplayerCursors />
+      {/* <MultiplayerCursors /> */}
 
       {/* Main Header / Navigation */}
       <Navbar />

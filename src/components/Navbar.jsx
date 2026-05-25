@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
+import { motion } from 'framer-motion';
 import Logo from './Logo';
-import SelectorBox from './SelectorBox';
 
 const Navbar = () => {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
@@ -30,44 +30,49 @@ const Navbar = () => {
 
   return (
     <>
-      <nav className={`w-full flex items-center justify-between py-6 px-6 sm:px-12 md:px-16 lg:px-24 sticky top-0 z-[99] bg-[#141414]/80 backdrop-blur-md border-b border-white/5 transition-transform duration-300 ${visible ? 'translate-y-0' : '-translate-y-full'}`}>
+      <motion.nav
+        initial={{ y: 0 }}
+        animate={{ y: visible ? 0 : -110 }}
+        transition={{ duration: 1, ease: [0.22, 1, 0.36, 1] }}
+        className="w-full flex items-center justify-between py-6 px-6 sm:px-12 md:px-16 lg:px-24 sticky top-0 z-[99] bg-[#141414]/85 backdrop-blur-md"
+      >
         <div className="w-full flex items-center justify-between relative">
           
           {/* Logo container */}
           <div id="logo-container" className="flex items-center">
-            <SelectorBox borderColor="border-custom-selectorBorder/50" className="p-1">
-              <a href="/" className="cursor-pointer block text-white hover:text-custom-primaryPurple transition-colors duration-300">
-                <Logo className="lg:w-36 lg:h-12 w-28 h-10 active:scale-95 duration-300" />
-              </a>
-            </SelectorBox>
+            <a href="/" className="cursor-pointer block text-white hover:opacity-80 transition-opacity duration-300">
+              <Logo className="lg:w-36 lg:h-12 w-28 h-10 active:scale-95 duration-300" />
+            </a>
           </div>
 
           {/* Desktop Nav Items */}
-          <div className="hidden md:flex items-center gap-x-8 font-display text-lg text-white">
+          <div className="hidden md:flex items-center gap-x-10 font-display text-lg text-stone-300">
             {menuItems.map((item) => (
-              <div key={item.name} id={item.id} className="relative">
-                <SelectorBox borderColor="border-custom-selectorBorder/40" className="p-0.5 active:scale-95 transition-transform duration-300">
-                  <a
-                    href={item.href}
-                    className="px-4 py-1 text-center tracking-tight text-white hover:text-custom-primaryPurple brightness-90 hover:brightness-100 transition-all duration-300 cursor-pointer block"
-                  >
-                    {item.name}
-                  </a>
-                </SelectorBox>
-              </div>
+              <a
+                key={item.name}
+                href={item.href}
+                className="hover:text-white transition-colors duration-300 cursor-pointer font-medium"
+              >
+                {item.name}
+              </a>
             ))}
           </div>
 
           {/* Contact Let's talk CTA */}
           <div className="hidden md:block" id="contact-button">
-            <SelectorBox borderColor="border-custom-selectorBorder/50" className="p-0.5">
-              <a
-                href="#contact"
-                className="flex items-center justify-center px-6 py-2.5 bg-[#FF0055] hover:bg-[#ff1f6d] active:scale-95 transition-all duration-300 rounded-full font-semibold text-white tracking-wide text-base leading-none shadow-lg cursor-pointer"
-              >
+            <a
+              href="#contact"
+              className="group relative flex items-center justify-center w-36 h-12 bg-[#FF0055] hover:bg-[#ff1f6d] active:scale-95 transition-all duration-300 rounded-full font-semibold text-white tracking-wide text-base overflow-hidden cursor-pointer shadow-lg"
+            >
+              {/* Text: slides up on hover */}
+              <span className="absolute inset-0 flex items-center justify-center transition-transform duration-300 group-hover:-translate-y-full">
                 Let’s talk
-              </a>
-            </SelectorBox>
+              </span>
+              {/* Waving hand: slides in from bottom on hover */}
+              <span className="absolute inset-0 flex items-center justify-center translate-y-full transition-transform duration-300 group-hover:translate-y-0">
+                <span className="inline-block animate-wave text-2xl origin-bottom-right">👋</span>
+              </span>
+            </a>
           </div>
 
           {/* Mobile Hamburguer Menu */}
@@ -81,7 +86,7 @@ const Navbar = () => {
             <span className={`h-0.5 w-6 bg-white transition-all duration-300 ${mobileMenuOpen ? '-rotate-45 -translate-y-2' : ''}`}></span>
           </button>
         </div>
-      </nav>
+      </motion.nav>
 
       {/* Mobile Drawer Overlay */}
       <div
