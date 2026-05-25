@@ -16,7 +16,7 @@ const WorkTogetherMarquee = () => {
   );
 
   return (
-    <div className="w-full overflow-hidden whitespace-nowrap py-12 md:py-16 border-t border-white/5 bg-[#141414] cursor-pointer group select-none">
+    <div className="w-full overflow-hidden whitespace-nowrap py-6 md:py-6 border-t border-white/5 bg-[#141414] cursor-pointer group select-none">
       <motion.div
         animate={{ x: [0, "-50%"] }}
         transition={{

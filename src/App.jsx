@@ -20,6 +20,7 @@ import ContactPage from './pages/ContactPage';
 
 // Router
 import { RouterProvider, useRouter } from './components/Router';
+import { SmoothScrollProvider } from './components/SmoothScroll';
 
 function AppContent() {
   const { path } = useRouter();
@@ -89,7 +90,9 @@ function AppContent() {
 function App() {
   return (
     <RouterProvider>
-      <AppContent />
+      <SmoothScrollProvider>
+        <AppContent />
+      </SmoothScrollProvider>
     </RouterProvider>
   );
 }

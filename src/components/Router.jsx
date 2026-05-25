@@ -33,7 +33,11 @@ export const RouterProvider = ({ children }) => {
       window.history.pushState({}, '', pendingPath);
       setPath(pendingPath);
       setDisplayPath(pendingPath);
-      window.scrollTo({ top: 0, behavior: 'instant' });
+      if (window.lenis) {
+        window.lenis.scrollTo(0, { immediate: true });
+      } else {
+        window.scrollTo({ top: 0, behavior: 'instant' });
+      }
       
       // Let the curtain slide out of view
       setTimeout(() => {
