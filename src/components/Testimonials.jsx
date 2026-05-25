@@ -199,9 +199,9 @@ const Testimonials = () => {
   // Transforms optimized for the page scrollable range (0.35 to 0.65)
   // ensuring animations complete fully before the user hits the bottom of the page.
   const storiesColor = useTransform(scrollYProgress, [0.35, 0.5], ["#8354fd", "#FF4A87"]);
-  const storiesScale = useTransform(scrollYProgress, [0.35, 0.6], [1, 0.2]);
-  const dotOpacity = useTransform(scrollYProgress, [0.45, 0.6], [0, 1]);
-  const storiesTranslateX = useTransform(scrollYProgress, [0.35, 0.6], [-60, 0]);
+  const storiesScale = useTransform(scrollYProgress, [0.35, 0.48, 0.6], [1, 1, 0.45]);
+  const dotOpacity = useTransform(scrollYProgress, [0.48, 0.6], [0, 1]);
+  const storiesTranslateX = useTransform(scrollYProgress, [0.35, 0.48, 0.6], [-60, -60, 0]);
   const secondTitleOpacity = useTransform(scrollYProgress, [0.5, 0.65], [0, 1]);
 
   const [isMobile, setIsMobile] = useState(false);
@@ -328,7 +328,7 @@ const Testimonials = () => {
       {/* Subtext description */}
       <motion.h1
         style={{ opacity: secondTitleOpacity }}
-        className="font-display font-bold text-white text-center text-4xl lg:text-5xl xl:text-6xl max-w-4xl px-6 leading-tight select-none mt-10"
+        className="font-display font-bold text-white text-center text-4xl lg:text-5xl xl:text-6xl max-w-4xl px-6 leading-tight select-none -mt-1 md:-mt-1 xl:-mt-1"
       >
         Of online wonders <br /> we brought to life.
       </motion.h1>

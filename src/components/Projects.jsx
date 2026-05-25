@@ -248,26 +248,14 @@ const Projects = () => {
           </div>
           <div ref={titleInViewRef} className="text-white text-8xl lg:text-9xl font-display font-bold leading-none select-none">
             <div className="overflow-hidden h-28 lg:h-36 flex justify-center z-10 relative">
-              {isTitleInView && (
-                <motion.h3
-                  initial={{ y: "100%" }}
-                  animate={{ y: 0 }}
-                  transition={{ duration: 1.2, ease: [0.65, 0, 0.35, 1] }}
-                >
-                  They love
-                </motion.h3>
-              )}
+              <h3>
+                They love
+              </h3>
             </div>
             <div className="overflow-hidden h-28 lg:h-36 flex justify-center z-10 relative mt-2">
-              {isTitleInView && (
-                <motion.h3
-                  initial={{ y: "100%" }}
-                  animate={{ y: 0 }}
-                  transition={{ duration: 1.2, ease: [0.65, 0, 0.35, 1], delay: 0.2 }}
-                >
-                  our work
-                </motion.h3>
-              )}
+              <h3>
+                our work
+              </h3>
             </div>
           </div>
         </motion.div>
