@@ -2,6 +2,7 @@ import React from 'react';
 import Navbar from '../components/Navbar';
 import Footer from '../components/Footer';
 import WorkTogetherMarquee from '../components/WorkTogetherMarquee';
+import { motion } from 'framer-motion';
 
 const blogsData = [
   {
@@ -38,7 +39,12 @@ const blogsData = [
 
 const BlogsPage = () => {
   return (
-    <div className="bg-[#141414] min-h-screen text-white font-sans flex flex-col justify-between select-none relative overflow-x-clip">
+    <motion.div
+      initial={{ opacity: 0, y: 20 }}
+      animate={{ opacity: 1, y: 0 }}
+      transition={{ duration: 0.6, ease: [0.22, 1, 0.36, 1] }}
+      className="bg-[#141414] min-h-screen text-white font-sans flex flex-col justify-between select-none relative overflow-x-clip"
+    >
       <Navbar />
 
       <main className="mt-16 md:mt-20 mx-auto max-w-[88rem] px-5 sm:px-10 md:px-16 lg:px-20 2xl:px-0 min-h-screen text-white w-full">
@@ -94,7 +100,7 @@ const BlogsPage = () => {
 
       <WorkTogetherMarquee />
       <Footer />
-    </div>
+    </motion.div>
   );
 };
 

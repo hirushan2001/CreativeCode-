@@ -10,6 +10,7 @@ import Technologies from './components/Technologies';
 import ContactSection from './components/ContactSection';
 import WorkTogetherMarquee from './components/WorkTogetherMarquee';
 import Footer from './components/Footer';
+import { motion } from 'framer-motion';
 
 // Pages
 import ProjectsPage from './pages/ProjectsPage';
@@ -36,7 +37,12 @@ function AppContent() {
 
   // Home Page
   return (
-    <div className="bg-[#141414] min-h-screen text-white font-sans selection:bg-custom-primaryPurple/35 selection:text-white select-none relative overflow-x-clip">
+    <motion.div
+      initial={{ opacity: 0, y: 20 }}
+      animate={{ opacity: 1, y: 0 }}
+      transition={{ duration: 0.6, ease: [0.22, 1, 0.36, 1] }}
+      className="bg-[#141414] min-h-screen text-white font-sans selection:bg-custom-primaryPurple/35 selection:text-white select-none relative overflow-x-clip"
+    >
       
       {/* Dynamic simulated cursors flying over page content */}
       {/* <MultiplayerCursors /> */}
@@ -71,7 +77,7 @@ function AppContent() {
       {/* Footer Details */}
       <Footer />
 
-    </div>
+    </motion.div>
   );
 }
 
