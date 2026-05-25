@@ -7,6 +7,8 @@ import ClientMarquee from './components/ClientMarquee';
 import Projects from './components/Projects';
 import Testimonials from './components/Testimonials';
 import Technologies from './components/Technologies';
+import ContactSection from './components/ContactSection';
+import WorkTogetherMarquee from './components/WorkTogetherMarquee';
 import Footer from './components/Footer';
 
 function App() {
@@ -37,6 +39,12 @@ function App() {
       {/* Technologies Stagger Grid */}
       <Technologies />
 
+      {/* Animated Call to Action / Contact */}
+      <ContactSection />
+
+      {/* Infinite Scrolling Work Together Marquee */}
+      <WorkTogetherMarquee />
+
       {/* Footer Details */}
       <Footer />
 
@@ -45,3 +53,4 @@ function App() {
 }
 
 export default App;
+
