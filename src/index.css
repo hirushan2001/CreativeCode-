@@ -1,0 +1,125 @@
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap');
+
+@import "tailwindcss";
+
+@theme {
+  --font-sans: 'Plus Jakarta Sans', system-ui, -apple-system, sans-serif;
+  --font-display: 'Outfit', system-ui, -apple-system, sans-serif;
+
+  --color-custom-sectionTopicColor: #e6c3f1;
+  --color-custom-selectorBorder: #c56cf5;
+  --color-custom-primaryPurple: #8354fd;
+  --color-custom-footerBg: #1c1c24;
+  --color-custom-footerLink: #9ca3af;
+  --color-custom-footerSMIcons: #a78bfa;
+}
+
+:root {
+  color-scheme: dark;
+  background-color: #141414;
+}
+
+body {
+  font-family: var(--font-sans);
+  background-color: #141414;
+  color: #ffffff;
+  overflow-x: clip;
+  margin: 0;
+  padding: 0;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Custom CSS Scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+::-webkit-scrollbar-track {
+  background: #141414;
+}
+::-webkit-scrollbar-thumb {
+  background: #2b2b2b;
+  border-radius: 4px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #3d3d3d;
+}
+
+/* Custom utilities */
+.shadow-outline-text {
+  color: #141414;
+  -webkit-text-stroke-width: 1px;
+  -webkit-text-stroke-color: rgba(255, 255, 255, 0.15);
+}
+
+.two-transparent-ends {
+  mask-image: linear-gradient(to right, transparent, white 20%, white 80%, transparent);
+}
+
+.two-transparent-ends-vertical {
+  mask-image: linear-gradient(to bottom, transparent, white 10%, white 90%, transparent);
+}
+
+.stack-parent {
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: 1fr;
+}
+
+.stack-child {
+  grid-column: 1 / -1;
+  grid-row: 1 / -1;
+}
+
+/* Force hardware clip-path rounding during 3D skews and transformations */
+.force-rounded-clip {
+  isolation: isolate;
+  backface-visibility: hidden;
+  -webkit-backface-visibility: hidden;
+  transform: translate3d(0, 0, 0);
+  -webkit-transform: translate3d(0, 0, 0);
+  -webkit-mask-image: -webkit-radial-gradient(white, black);
+}
+
+/* Disable expensive backdrop-blurs, hover scales, and transitions during active scroll */
+.is-scrolling .group:hover img {
+  transform: none !important;
+  transition: none !important;
+}
+
+.is-scrolling .group:hover .backdrop-blur-lg {
+  opacity: 0 !important;
+  backdrop-filter: none !important;
+  -webkit-backdrop-filter: none !important;
+  transition: none !important;
+}
+
+/* Custom layout utilities for footer */
+@media (min-width: 1024px) {
+  .footer-grid-row-1 {
+    grid-template-columns: 1fr 2fr;
+  }
+}
+
+/* Waving animation */
+@keyframes wave {
+  0%, 100% { transform: rotate(0deg); }
+  50% { transform: rotate(15deg); }
+}
+
+.animate-wave {
+  animation: wave 1.5s ease-in-out infinite;
+}
+
+/* Selection marquee / slider classes */
+.keen-slider {
+  display: flex;
+  overflow: hidden;
+  position: relative;
+  width: 100%;
+}
+.keen-slider__slide {
+  position: relative;
+  width: 100%;
+  flex-shrink: 0;
+}
