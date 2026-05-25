@@ -11,7 +11,30 @@ import ContactSection from './components/ContactSection';
 import WorkTogetherMarquee from './components/WorkTogetherMarquee';
 import Footer from './components/Footer';
 
-function App() {
+// Pages
+import ProjectsPage from './pages/ProjectsPage';
+import JoinUsPage from './pages/JoinUsPage';
+import BlogsPage from './pages/BlogsPage';
+
+// Router
+import { RouterProvider, useRouter } from './components/Router';
+
+function AppContent() {
+  const { path } = useRouter();
+
+  if (path === '/projects') {
+    return <ProjectsPage />;
+  }
+
+  if (path === '/join-us') {
+    return <JoinUsPage />;
+  }
+
+  if (path === '/blogs') {
+    return <BlogsPage />;
+  }
+
+  // Home Page
   return (
     <div className="bg-[#141414] min-h-screen text-white font-sans selection:bg-custom-primaryPurple/35 selection:text-white select-none relative overflow-x-clip">
       
@@ -49,6 +72,14 @@ function App() {
       <Footer />
 
     </div>
+  );
+}
+
+function App() {
+  return (
+    <RouterProvider>
+      <AppContent />
+    </RouterProvider>
   );
 }
 

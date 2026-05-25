@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { motion } from 'framer-motion';
 import Logo from './Logo';
+import { Link } from './Router';
 
 const Navbar = () => {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
@@ -23,9 +24,9 @@ const Navbar = () => {
   }, [prevScrollPos]);
 
   const menuItems = [
-    { name: 'Projects', href: '#projects-section', id: 'projects-link' },
-    { name: 'Join us', href: '#', id: 'join-us-link' },
-    { name: 'Blogs', href: '#', id: 'portal-link' }
+    { name: 'Projects', href: '/projects', id: 'projects-link' },
+    { name: 'Join us', href: '/join-us', id: 'join-us-link' },
+    { name: 'Blogs', href: '/blogs', id: 'portal-link' }
   ];
 
   return (
@@ -40,21 +41,21 @@ const Navbar = () => {
           
           {/* Logo container */}
           <div id="logo-container" className="flex items-center">
-            <a href="/" className="cursor-pointer block text-white hover:opacity-80 transition-opacity duration-300">
+            <Link href="/" className="cursor-pointer block text-white hover:opacity-80 transition-opacity duration-300">
               <Logo className="lg:w-36 lg:h-12 w-28 h-10 active:scale-95 duration-300" />
-            </a>
+            </Link>
           </div>
 
           {/* Desktop Nav Items */}
           <div className="hidden md:flex items-center gap-x-10 font-display text-lg text-stone-300">
             {menuItems.map((item) => (
-              <a
+              <Link
                 key={item.name}
                 href={item.href}
                 className="hover:text-white transition-colors duration-300 cursor-pointer font-medium"
               >
                 {item.name}
-              </a>
+              </Link>
             ))}
           </div>
 
@@ -95,14 +96,14 @@ const Navbar = () => {
         }`}
       >
         {menuItems.map((item) => (
-          <a
+          <Link
             key={item.name}
             href={item.href}
             onClick={() => setMobileMenuOpen(false)}
             className="font-display font-bold text-white hover:text-[#FF0055] transition-colors duration-300"
           >
             {item.name}
-          </a>
+          </Link>
         ))}
         <a
           href="#contact"
