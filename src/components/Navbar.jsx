@@ -71,17 +71,21 @@ const Navbar = () => {
 
           {/* Let's talk CTA */}
           <div className="hidden md:block" id="contact-button">
-            <a
-              href="#contact"
-              className="group relative flex items-center justify-center w-36 h-12 bg-[#FF0055] hover:bg-[#ff1f6d] active:scale-95 transition-all duration-300 rounded-full font-semibold text-white tracking-wide text-base overflow-hidden cursor-pointer shadow-lg"
+            <Link
+              href="/contact-us"
+              className="group relative flex items-center justify-center w-36 h-12 bg-[#FF0055] hover:bg-[#ff1f6d] active:scale-95 transition-all duration-500 rounded-full font-semibold text-white tracking-wide text-base overflow-hidden cursor-pointer shadow-lg"
             >
-              <span className="absolute inset-0 flex items-center justify-center transition-transform duration-300 group-hover:-translate-y-full">
+              {/* Text: slides to the right on hover */}
+              <span className="absolute inset-0 flex items-center justify-center transition-all duration-500 ease-out group-hover:translate-x-full group-hover:opacity-0">
                 Let's talk
               </span>
-              <span className="absolute inset-0 flex items-center justify-center translate-y-full transition-transform duration-300 group-hover:translate-y-0">
-                <span className="inline-block animate-wave text-2xl origin-bottom-right">👋</span>
+              {/* Waving hand: slides in from the left to the center on hover */}
+              <span className="absolute inset-0 flex items-center justify-center -translate-x-full opacity-0 transition-all duration-500 ease-out group-hover:translate-x-0 group-hover:opacity-100">
+                <span className="inline-block animate-wave origin-bottom-left">
+                  <span className="inline-block scale-x-[-1] text-3xl">👋</span>
+                </span>
               </span>
-            </a>
+            </Link>
           </div>
 
           {/* Mobile Hamburger */}
@@ -118,13 +122,13 @@ const Navbar = () => {
             </Link>
           );
         })}
-        <a
-          href="#contact"
+        <Link
+          href="/contact-us"
           onClick={() => setMobileMenuOpen(false)}
           className="w-fit px-8 py-3 bg-[#FF0055] rounded-full font-bold text-white text-2xl hover:bg-[#ff1f6d] transition-all duration-300"
         >
           Let's talk
-        </a>
+        </Link>
       </div>
     </>
   );

@@ -16,6 +16,7 @@ import { motion } from 'framer-motion';
 import ProjectsPage from './pages/ProjectsPage';
 import JoinUsPage from './pages/JoinUsPage';
 import BlogsPage from './pages/BlogsPage';
+import ContactPage from './pages/ContactPage';
 
 // Router
 import { RouterProvider, useRouter } from './components/Router';
@@ -33,6 +34,10 @@ function AppContent() {
 
   if (path === '/blogs') {
     return <BlogsPage />;
+  }
+
+  if (path === '/contact-us') {
+    return <ContactPage />;
   }
 
   // Home Page

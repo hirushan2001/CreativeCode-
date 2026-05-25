@@ -1,5 +1,6 @@
 import React from 'react';
 import Clock from './Clock';
+import { Link } from './Router';
 
 const ContactSection = () => {
   return (
@@ -31,12 +32,12 @@ const ContactSection = () => {
           </p>
           
           <div className="flex flex-col sm:flex-row items-center gap-4 mt-2">
-            <a
-              href="#contact"
+            <Link
+              href="/contact-us"
               className="bg-[#FF0055] hover:bg-[#ff1f6d] hover:scale-105 active:scale-95 transition-all duration-300 text-white font-bold rounded-full text-xl px-10 py-4 flex items-center justify-center cursor-pointer shadow-lg shadow-[#FF0055]/30 select-none"
             >
               Say Hello
-            </a>
+            </Link>
             <a
               href="#projects"
               className="border border-white/10 hover:border-white/30 hover:bg-white/5 transition-all duration-300 text-white font-bold rounded-full text-xl px-8 py-4 flex items-center justify-center cursor-pointer select-none"
