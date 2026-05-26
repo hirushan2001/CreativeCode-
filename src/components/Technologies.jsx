@@ -29,11 +29,11 @@ const TechCard = ({ name, iconUrl, yOffset, index }) => {
       style={{ y: cardY }}
       className="flex flex-col justify-center items-center bg-[#181818] border border-[#242424] rounded-[1.75rem] aspect-square hover:border-[#FF0055]/30 hover:bg-[#1e1e1e] hover:shadow-lg transition-all duration-300 select-none group w-28 h-28"
     >
-      <div className="w-16 h-16 flex items-center justify-center">
+      <div className="w-18 h-18 flex items-center justify-center">
         <img
           src={iconUrl}
           alt={name}
-          className={`w-16 h-16 object-contain group-hover:scale-110 transition-transform duration-300 ${
+          className={`w-18 h-18 object-contain group-hover:scale-110 transition-transform duration-300 ${
             name === "Framer Motion" ? "invert" : ""
           }`}
           loading="lazy"

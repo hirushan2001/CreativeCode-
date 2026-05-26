@@ -99,7 +99,7 @@ const JoinUsPage = () => {
         </div>
 
         {/* careers portal call */}
-        <div className="flex flex-col gap-y-6 text-[#C0C0C0] max-w-3xl">
+        <div className="flex flex-col gap-y-6 mb-20 text-[#C0C0C0] max-w-3xl">
           <h2 className="text-3xl md:text-4xl font-display font-bold text-white">
             Ready to Make Your Mark?
           </h2>

@@ -60,7 +60,7 @@ const BlogsPage = () => {
         </div>
 
         {/* Blogs Grid */}
-        <div className="mt-20 grid grid-cols-1 gap-10 lg:gap-5 lg:grid-cols-2 w-full">
+        <div className="mt-20 mb-20 grid grid-cols-1 gap-10 lg:gap-5 lg:grid-cols-2 w-full">
           {blogsData.map((blog, index) => (
             <a
               key={index}

@@ -82,16 +82,11 @@ const Hero = () => {
           </motion.div>
 
           {/* Headline */}
-          <h1 className="relative font-display text-5xl md:text-7xl lg:text-8xl font-bold tracking-tight text-white leading-tight">
-            <div id="webDevelopWebsiteContainer" className="relative inline-flex flex-col md:flex-row items-center justify-center flex-wrap gap-x-4">
-              
-              {/* Constant "We" */}
-              <span className="text-white">We</span>
-
-              {/* Selecting area */}
-              <div className="relative inline-block px-2 py-1 mx-1 overflow-visible">
-                
-                {/* Animated selection box shade */}
+          <h1 className="relative font-display text-4xl md:text-5xl lg:text-7xl xl:text-8xl font-bold tracking-tight text-white leading-none flex flex-col items-center gap-y-3 select-none">
+            {/* Line 1: We + Selected word */}
+            <div className="relative inline-flex flex-row items-center justify-center whitespace-nowrap gap-x-4">
+              <span className="text-white whitespace-nowrap">We</span>
+              <div className="relative inline-block px-2 py-1 mx-1 overflow-visible whitespace-nowrap">
                 <AnimatePresence>
                   {isSelecting && (
                     <motion.div
@@ -103,18 +98,17 @@ const Hero = () => {
                     />
                   )}
                 </AnimatePresence>
-
-                {/* Dynamic text inside selection */}
-                <span className="relative z-10 text-[#cdb0e4] font-extrabold select-none">
+                <span className="relative z-10 text-[#cdb0e4] font-extrabold select-none whitespace-nowrap">
                   {words[index].highlight}
                 </span>
               </div>
+            </div>
 
-              {/* Dynamic sentence end */}
-              <span className="text-white block md:inline mt-2 md:mt-0 font-medium">
+            {/* Line 2: sentence end */}
+            <div className="relative inline-flex flex-row items-center justify-center whitespace-nowrap">
+              <span className="text-white font-medium whitespace-nowrap">
                 {words[index].end}
               </span>
-
             </div>
           </h1>
 
