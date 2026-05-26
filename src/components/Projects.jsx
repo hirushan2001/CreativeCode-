@@ -1,6 +1,7 @@
 import React, { useRef, useState, useEffect } from 'react';
 import { motion, useScroll, useTransform, useSpring, useVelocity, useInView } from 'framer-motion';
 import { Link } from './Router';
+import { homepageProjectsList as projectsData } from '../data/projectsData';
 
 // Separate Card component to handle scroll-linked transforms cleanly
 const ProjectCard = ({ gridArea, skewValue, cardSpeed, imgSrc, projectName, projectTags, link }) => {
@@ -144,43 +145,7 @@ const Projects = () => {
   const cardSpeed5 = useTransform(smoothProgress, [0, 1], ["0%", "10%"]);
   const cardSpeed6 = useTransform(smoothProgress, [0, 1], ["0%", "-50%"]);
 
-  const projectsData = [
-    {
-      gridArea: "1 / 1 / 2 / 2",
-      projectName: "Debonair Orlando",
-      projectTags: ["Creative Development"],
-      imgSrc: "https://images.prismic.io/creativo-code-official/ZvWhvbVsGrYSwDK8_Frame203.png?auto=format,compress&fit=max&w=1200",
-      link: "/projects/debonair"
-    },
-    {
-      gridArea: "1 / 2 / 2 / 3",
-      projectName: "M3R Global",
-      projectTags: ["UI/UX", "Web Development"],
-      imgSrc: "https://images.prismic.io/creativo-code-official/ZvWhtrVsGrYSwDK7_Frame202.png?auto=format,compress&fit=max&w=1200",
-      link: "/projects/m3rglobal"
-    },
-    {
-      gridArea: "1 / 3 / 2 / 4",
-      projectName: "Deliverables Factory",
-      projectTags: ["Creative Development"],
-      imgSrc: "https://images.prismic.io/creativo-code-official/ZvWhxrVsGrYSwDK__Frame205.png?auto=format,compress&fit=max&w=1200",
-      link: "/projects/deliverables-factory"
-    },
-    {
-      gridArea: "2 / 1 / 3 / 2",
-      projectName: "Nexus Spices",
-      projectTags: ["UI/UX", "Web development"],
-      imgSrc: "https://images.prismic.io/creativo-code-official/ZvWhwbVsGrYSwDK-_Frame204.png?auto=format,compress&fit=max&w=1200",
-      link: "/projects/nexus-spices"
-    },
-    {
-      gridArea: "2 / 3 / 3 / 4",
-      projectName: "Firefly Advocates",
-      projectTags: ["UI/UX"],
-      imgSrc: "https://images.prismic.io/creativo-code-official/ZvWhzLVsGrYSwDLA_Frame206.png?auto=format,compress&fit=max&w=1200",
-      link: "/projects/firefly-advocates"
-    }
-  ];
+
 
   if (isMobile) {
     return (
