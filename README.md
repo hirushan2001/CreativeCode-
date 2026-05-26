@@ -1,16 +1,69 @@
-# React + Vite
+# Creative Code 🚀
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Welcome to the **Creative Code** repository. This is a premium, high-performance creative agency website designed to deliver highly immersive and buttery smooth digital experiences.
 
-Currently, two official plugins are available:
+---
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+## ✨ Features & Visual Highlights
 
-## React Compiler
+- **Dynamic Hero Section**: Interactive, beautifully animated selection drag system presenting the agency's primary capabilities. Highly responsive layout scaling perfectly on all device sizes.
+- **Buttery-Smooth Page Transitions**: Custom GPU-accelerated page transitions driven by solid curtain sweeps and JavaScript timers to prevent stuck routes and frame rate drops.
+- **Lag-Free Interaction Design**: Leverages hardware-accelerated transforms (`willChange: 'transform'`) and temporarily pauses the **Lenis** scroll engine during active animations to guarantee 60 FPS.
+- **Fluid Navigation Drawer**: Fully responsive mobile drawer, styled with brand colors and loaded with unified social handles.
+- **Modern Iconography**: Unified vector icons across all pages powered by `react-icons/fa6` (FontAwesome 6).
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+---
 
-## Expanding the ESLint configuration
+## 🛠️ Tech Stack
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+- **Framework**: [React 19](https://react.dev/)
+- **Build Tool**: [Vite](https://vite.dev/)
+- **Styling**: [Tailwind CSS v4](https://tailwindcss.com/)
+- **Animations**: [Framer Motion](https://www.framer.com/motion/)
+- **Smooth Scroll**: [Lenis](https://lenis.darkroom.engineering/)
+- **Icons**: [React Icons](https://react-icons.github.io/react-icons/)
+
+---
+
+## 🚀 Getting Started
+
+### Prerequisites
+
+Make sure you have [Node.js](https://nodejs.org/) installed (version 18 or above recommended).
+
+### Installation
+
+1. Clone the repository:
+   ```bash
+   git clone https://github.com/creativo-code/creative-code.git
+   cd creative-code
+   ```
+
+2. Install dependencies:
+   ```bash
+   npm install
+   ```
+
+3. Spin up the local development server:
+   ```bash
+   npm run dev
+   ```
+
+4. Build the application for production:
+   ```bash
+   npm run build
+   ```
+
+5. Preview the production build locally:
+   ```bash
+   npm run preview
+   ```
+
+---
+
+## ⚙️ CI/CD Workflows
+
+This project includes a **GitHub Actions** workflow (`.github/workflows/build.yml`) that triggers automatically on every `push` and `pull_request` targeting the `main` or `master` branches. It validates the code compilation by running:
+- Node.js setup with automatic npm dependency caching.
+- Clean dependency installation using `npm ci`.
+- Production bundle verification using `npm run build`.
