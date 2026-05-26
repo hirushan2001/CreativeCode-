@@ -1,29 +1,28 @@
-import React, { useState, useEffect } from 'react';
-import { motion, useScroll, useTransform } from 'framer-motion';
+import React, { useState } from 'react';
+import { motion, useTransform, useMotionValue } from 'framer-motion';
 
-const Clock = () => {
-  const [time, setTime] = useState(null);
-  const [clockRotating, setClockRotating] = useState(false);
-
-  // Track absolute scroll position in pixels
-  const { scrollY } = useScroll();
-
-  useEffect(() => {
+const Clock = ({ scrollRotation }) => {
+  // Initialize time synchronously on mount so it's never null during transform setup
+  const [time] = useState(() => {
     const now = new Date();
-    // Sweeps to current time + 360 deg on mount
-    setTime({
-      seconds: 6 * now.getSeconds() + 360,
-      minutes: 6 * now.getMinutes() + 360,
-      hours: 30 * now.getHours() + 360
-    });
-  }, []);
+    return {
+      seconds: 6 * now.getSeconds(),
+      minutes: 6 * now.getMinutes(),
+      hours: 30 * now.getHours()
+    };
+  });
 
-  // Set up scroll-linked transforms mapping scrollY (pixels) to rotation degrees
-  const c = useTransform(scrollY, t => 0.036 * t + (time ? time.seconds - 216 : 0));
-  const d = useTransform(scrollY, t => 0.0006 * t + (time ? time.minutes - 3.6 : 0));
-  const h = useTransform(scrollY, t => 0.0000096 * t + (time ? time.hours - 0.0576 : 0));
+  // Fallback motion value if scrollRotation is not passed
+  const fallbackScrollRotation = useMotionValue(0);
+  const rotation = scrollRotation || fallbackScrollRotation;
 
-  if (!time) return null;
+  // Transform scroll rotation proportionally for each hand (speed reduced for a calmer effect):
+  // - Second hand spins 3 times (3 * 360 = 1080 deg)
+  // - Minute hand spins 0.3 times (108 deg, or ~18 mins passing)
+  // - Hour hand spins proportionally slower (~9 deg)
+  const secRotate = useTransform(rotation, r => time.seconds + r * 3);
+  const minRotate = useTransform(rotation, r => time.minutes + r * 0.3);
+  const hourRotate = useTransform(rotation, r => time.hours + r * 0.025);
 
   return (
     <div className="w-full h-full relative grid stack-parent place-items-center select-none pointer-events-none">
@@ -32,9 +31,7 @@ const Clock = () => {
 
       {/* Hour Hand */}
       <motion.div
-        animate={{ rotate: time.hours }}
-        transition={{ duration: 6, ease: [0.25, 1, 0.5, 1] }}
-        style={{ rotate: clockRotating ? h : time.hours }}
+        style={{ rotate: hourRotate }}
         className="w-[60%] aspect-square rounded-full stack-child z-[40] flex justify-center items-start"
       >
         <div className="bg-white h-[51%] w-3 rounded-xl origin-bottom"></div>
@@ -42,10 +39,7 @@ const Clock = () => {
 
       {/* Minute Hand */}
       <motion.div
-        animate={{ rotate: time.minutes }}
-        transition={{ duration: 6, ease: [0.25, 1, 0.5, 1] }}
-        onAnimationComplete={() => setClockRotating(true)}
-        style={{ rotate: clockRotating ? d : time.minutes }}
+        style={{ rotate: minRotate }}
         className="w-[75%] aspect-square rounded-full stack-child z-[41] flex justify-center items-start"
       >
         <div className="bg-white h-[51%] w-2 rounded-xl origin-bottom"></div>
@@ -53,9 +47,7 @@ const Clock = () => {
 
       {/* Second Hand */}
       <motion.div
-        animate={{ rotate: time.seconds }}
-        transition={{ duration: 6, ease: "linear" }}
-        style={{ rotate: clockRotating ? c : time.seconds }}
+        style={{ rotate: secRotate }}
         className="w-[90%] aspect-square rounded-full stack-child z-[42] flex justify-center items-start"
       >
         <div className="bg-white h-[51%] w-1 rounded-xl origin-bottom"></div>
@@ -65,3 +57,4 @@ const Clock = () => {
 };
 
 export default Clock;
+
