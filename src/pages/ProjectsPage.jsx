@@ -108,7 +108,7 @@ const ProjectsPage = () => {
         </div>
 
         {/* Projects Cards Grid */}
-        <div className="mt-20 grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-16 md:gap-10 w-full">
+        <div className="mt-20 mb-20 grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-16 md:gap-10 w-full">
           {projectsData.map((project, index) => (
             <Link
               href={project.link}

@@ -44,7 +44,7 @@ const projectsDetailsData = {
     subtitle: "A website for a video production company",
     icon: "https://images.prismic.io/creativo-code-official/ZuwdHLVsGrYSvlnq_DeliverablesLogo.png?auto=format%2Ccompress&fit=max&w=384",
     hero_mockup: "https://images.prismic.io/creativo-code-official/ZuwdDbVsGrYSvlnn_Deliverables-hero.png?auto=format%2Ccompress&fit=max&w=3840",
-    hero_gradient: "linear-gradient(180deg, #1D4ED8 40.15%, rgba(186,78,26,0.00) 78.1%)",
+    hero_gradient: "linear-gradient(180deg, #000000 40.15%, rgba(186,78,26,0.00) 78.1%)",
     theme_color: "#1D4ED8",
     overview: "Deliverables Factory tasked us with designing and developing a website that stands out from typical designs, aligning with their brandâ€™s creative essence. The goal was to build a website with parallax animations that not only conveyed their unique theme but also effectively communicated their services and approach in a memorable way.",
     industry: "Video Production",
@@ -105,7 +105,7 @@ const projectsDetailsData = {
     subtitle: "Landing page for a supply chain management company",
     icon: "https://images.prismic.io/creativo-code-official/Zuwho7VsGrYSvlrE_m3rgloballogo.png?auto=format%2Ccompress&fit=max&w=384",
     hero_mockup: "https://images.prismic.io/creativo-code-official/Zu7wOrVsGrYSvpc-_mockup14inch.png?auto=format%2Ccompress&fit=max&w=3840",
-    hero_gradient: "linear-gradient(180deg, #10B981 40.15%, rgba(0,0,0,0) 78.1%)",
+    hero_gradient: "linear-gradient(180deg, #000000 40.15%, rgba(0,0,0,0) 78.1%)",
     theme_color: "#10B981",
     overview: "M3R Global did not have an online presence and required a website to showcase their services and establish credibility in the market. They needed a platform that highlighted their core offerings, including exporting and consulting services, and provided easy access for clients to request quotes and get in touch.",
     industry: "Logistics",
@@ -134,7 +134,7 @@ const projectsDetailsData = {
     subtitle: "Website for a spice exporting company",
     icon: "https://creativo-code-official.cdn.prismic.io/creativo-code-official/Zu3rpLVsGrYSvpEd_Nextspices.svg?fit=max&w=384",
     hero_mockup: "https://creativo-code-official.cdn.prismic.io/creativo-code-official/Zu3xvLVsGrYSvpFf_Zuv9mbVsGrYSvlXV_Nexus-hero-right.svg?fit=max&w=3840",
-    hero_gradient: "linear-gradient(180deg, #D97706 40.15%, rgba(0,0,0,0) 78.1%)",
+    hero_gradient: "linear-gradient(180deg, #030303 40.15%, rgba(0,0,0,0) 78.1%)",
     theme_color: "#BA4E1A",
     overview: "Nexus Spices needed a professional and creative website to showcase their products and attract B2B customers. The website had to feature an intuitive way for customers to place orders through an online form, integrate a CMS for product updates, and include contact forms, social media links, and a Google Maps integration to highlight their office location. The goal was to provide a digital platform that reflected the brand's quality and made it easy for customers to engage with their offerings.",
     industry: "Retail trade",
@@ -164,7 +164,7 @@ const projectsDetailsData = {
     subtitle: "Website for an agency",
     icon: "https://images.prismic.io/creativo-code-official/ZuvpvrVsGrYSvlLA_Dreamshiftlogo.png?auto=format%2Ccompress&fit=max&w=384",
     hero_mockup: "https://images.prismic.io/creativo-code-official/ZuvsFLVsGrYSvlMp_Dreamshift-.png?auto=format%2Ccompress&fit=max&w=3840",
-    hero_gradient: "linear-gradient(180deg, #4F46E5 40.15%, rgba(186,78,26,0.00) 78.1%)",
+    hero_gradient: "linear-gradient(180deg, #000000 40.15%, rgba(186,78,26,0.00) 78.1%)",
     theme_color: "#4F46E5",
     overview: "DreamShift approached us to build a professional, visually appealing, and responsive website that effectively represents their brand. The website needed to serve as their digital front, showcasing their services, packages, pricing, client testimonials, and unique approach to career transformation. We developed a WordPress website that successfully met all of their needs, creating an engaging and seamless user experience that resonates with DreamShift's target audience.",
     industry: "Career services",
@@ -193,7 +193,7 @@ const projectsDetailsData = {
     subtitle: "Wedding invitation website",
     icon: "",
     hero_mockup: "https://images.prismic.io/creativo-code-official/Zhq9mzjCgu4jzzLa_gt-wedding.jpg?auto=format%2Ccompress&fit=max&w=3840",
-    hero_gradient: "linear-gradient(180deg, #EC4899 40.15%, rgba(186,78,26,0.00) 78.1%)",
+    hero_gradient: "linear-gradient(180deg, #000000 40.15%, rgba(186,78,26,0.00) 78.1%)",
     theme_color: "#EC4899",
     overview: "The goal of this project was to design and develop a digital web invitation for Gurtejpal and Tamannaâ€™s wedding. They wanted the invitation to be visually appealing, mobile-friendly, and interactive, with custom animations to enhance the overall user experience. The design needed to reflect the coupleâ€™s unique style while providing all the necessary details about their wedding events.",
     industry: "Entertainment",
@@ -222,7 +222,7 @@ const projectsDetailsData = {
     subtitle: "A website for a modern fashion and lifestyle brand",
     icon: "",
     hero_mockup: "https://images.prismic.io/creativo-code-official/Z_utaevxEdbNO-hF_image01.png?auto=format%2Ccompress&fit=max&w=3840",
-    hero_gradient: "linear-gradient(180deg, #EF4444 40.15%, rgba(186,78,26,0.00) 78.1%)",
+    hero_gradient: "linear-gradient(180deg, #000000 40.15%, rgba(186,78,26,0.00) 78.1%)",
     theme_color: "#EF4444",
     overview: "The objective was to design and develop a creative and visually captivating website to represent and promote the two clothing brands effectively. The landing page must be divided into two halves, each representing a brand. The top half symbolises \"Heaven,\" embodying one brandâ€™s aesthetic, while the bottom half symbolises \"Hell,\" reflecting the other brand's identity.\n\nThe client required a seamless and interactive user experience, ensuring optimal performance across devices, screen sizes, and resolutions, including desktop and mobile. The project aimed to create a site with a unique scroll-based flow starting from the middle, where the two halves meet, making the experience engaging and memorable.",
     industry: "Fashion",
@@ -280,7 +280,7 @@ const projectsDetailsData = {
     subtitle: "Wedding invitation website",
     icon: "",
     hero_mockup: "https://images.prismic.io/creativo-code-official/ZvW7prVsGrYSwDUg_Frame209.png?auto=format%2Ccompress&fit=max&w=3840",
-    hero_gradient: "linear-gradient(180deg, #8B5CF6 40.15%, rgba(0,0,0,0.00) 78.1%)",
+    hero_gradient: "linear-gradient(180deg, #000000 40.15%, rgba(0,0,0,0.00) 78.1%)",
     theme_color: "#8B5CF6",
     overview: "The goal was to design and develop a digital web invitation for Paul and Karen's wedding invitation. They wanted it to be visually breathtaking, responsive, and provide interactive RSVP forms for their guests.",
     industry: "Entertainment / Events",
@@ -308,7 +308,7 @@ const projectsDetailsData = {
     subtitle: "Wedding invitation website",
     icon: "",
     hero_mockup: "https://images.prismic.io/creativo-code-official/ZvXDTbVsGrYSwDW9_Frame211.png?auto=format%2Ccompress&fit=max&w=3840",
-    hero_gradient: "linear-gradient(180deg, #F43F5E 40.15%, rgba(0,0,0,0.00) 78.1%)",
+    hero_gradient: "linear-gradient(180deg, #000000 40.15%, rgba(0,0,0,0.00) 78.1%)",
     theme_color: "#F43F5E",
     overview: "A digital web invitation for Kevin and Ashley's wedding. It features bespoke illustrations, smooth scrolling parallax sections, and a responsive timeline of events.",
     industry: "Entertainment / Events",
@@ -369,10 +369,10 @@ const ProjectDetailPage = ({ projectUid }) => {
             {/* Title row */}
             <div className="flex lg:items-center lg:justify-between project-page-layout flex-col lg:flex-row justify-start items-start gap-y-5 gap-x-14 max-lg:py-10 max-sm:mt-8">
               <div className="flex flex-col gap-3 w-fit">
-                <h1 className="text-white font-semibold w-fit text-5xl md:text-6xl lg:text-7xl xl:text-8xl leading-tight">
+                <h1 className="text-white font-display font-bold w-fit text-5xl md:text-6xl lg:text-7xl xl:text-8xl leading-tight">
                   {project.title}
                 </h1>
-                <h1 className="text-white font-sans text-xl md:text-2xl lg:text-3xl w-fit font-light opacity-90">
+                <h1 className="text-white font-display text-xl md:text-2xl lg:text-3xl w-fit font-light opacity-90">
                   {project.subtitle}
                 </h1>
               </div>
