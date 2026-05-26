@@ -1,5 +1,6 @@
 import React, { useRef, useState, useEffect } from 'react';
 import { motion, useScroll, useTransform, useSpring, useVelocity, useInView } from 'framer-motion';
+import { Link } from './Router';
 
 // Separate Card component to handle scroll-linked transforms cleanly
 const ProjectCard = ({ gridArea, skewValue, cardSpeed, imgSrc, projectName, projectTags, link }) => {
@@ -12,7 +13,7 @@ const ProjectCard = ({ gridArea, skewValue, cardSpeed, imgSrc, projectName, proj
       }}
       className="min-h-[350px] w-[27dvw] h-[40vh] lg:h-[60dvh] xl:h-[60dvh] 2xl:h-[70dvh] relative flex flex-col gap-y-3 transform-gpu will-change-transform"
     >
-      <a href={link || "#"} className="flex flex-col gap-y-3 w-full h-full group">
+      <Link href={link || "#"} className="flex flex-col gap-y-3 w-full h-full group cursor-pointer">
         <div className="w-full h-full overflow-hidden rounded-2xl relative flex justify-start items-end bg-stone-900/50 shadow-lg force-rounded-clip">
           <img
             src={imgSrc}
@@ -41,7 +42,7 @@ const ProjectCard = ({ gridArea, skewValue, cardSpeed, imgSrc, projectName, proj
             </React.Fragment>
           ))}
         </ul>
-      </a>
+      </Link>
     </motion.div>
   );
 };
@@ -56,7 +57,7 @@ const ExploreCard = ({ gridArea, skewValue, cardSpeed }) => {
       }}
       className="group flex flex-col gap-y-3 min-h-[350px] w-[27dvw] h-[40vh] lg:h-[60dvh] xl:h-[60dvh] 2xl:h-[70dvh] transform-gpu will-change-transform"
     >
-      <a href="#contact" className="w-full h-full">
+      <Link href="/projects" className="w-full h-full cursor-pointer">
         <div className="w-full h-full z-30 relative text-center bg-[#3600D1] hover:bg-[#430ce6] transition-colors duration-300 rounded-2xl flex flex-col justify-center items-center gap-y-7 px-4 shadow-lg force-rounded-clip">
           <p className="text-white text-2xl md:text-3xl lg:text-5xl xl:text-6xl font-display font-bold leading-tight select-none">
             Explore <br /> More <br /> Projects
@@ -67,7 +68,7 @@ const ExploreCard = ({ gridArea, skewValue, cardSpeed }) => {
             </svg>
           </div>
         </div>
-      </a>
+      </Link>
     </motion.div>
   );
 };
@@ -149,35 +150,35 @@ const Projects = () => {
       projectName: "Debonair Orlando",
       projectTags: ["Creative Development"],
       imgSrc: "https://images.prismic.io/creativo-code-official/ZvWhvbVsGrYSwDK8_Frame203.png?auto=format,compress&fit=max&w=1200",
-      link: "#"
+      link: "/projects/debonair"
     },
     {
       gridArea: "1 / 2 / 2 / 3",
       projectName: "M3R Global",
       projectTags: ["UI/UX", "Web Development"],
       imgSrc: "https://images.prismic.io/creativo-code-official/ZvWhtrVsGrYSwDK7_Frame202.png?auto=format,compress&fit=max&w=1200",
-      link: "#"
+      link: "/projects/m3rglobal"
     },
     {
       gridArea: "1 / 3 / 2 / 4",
       projectName: "Deliverables Factory",
       projectTags: ["Creative Development"],
       imgSrc: "https://images.prismic.io/creativo-code-official/ZvWhxrVsGrYSwDK__Frame205.png?auto=format,compress&fit=max&w=1200",
-      link: "#"
+      link: "/projects/deliverables-factory"
     },
     {
       gridArea: "2 / 1 / 3 / 2",
       projectName: "Nexus Spices",
       projectTags: ["UI/UX", "Web development"],
       imgSrc: "https://images.prismic.io/creativo-code-official/ZvWhwbVsGrYSwDK-_Frame204.png?auto=format,compress&fit=max&w=1200",
-      link: "#"
+      link: "/projects/nexus-spices"
     },
     {
       gridArea: "2 / 3 / 3 / 4",
       projectName: "Firefly Advocates",
       projectTags: ["UI/UX"],
       imgSrc: "https://images.prismic.io/creativo-code-official/ZvWhzLVsGrYSwDLA_Frame206.png?auto=format,compress&fit=max&w=1200",
-      link: "#"
+      link: "/projects/firefly-advocates"
     }
   ];
 
@@ -196,16 +197,16 @@ const Projects = () => {
 
         <div className="flex flex-col gap-y-12 w-full max-w-sm">
           {projectsData.map((project) => (
-            <div key={project.projectName} className="flex flex-col gap-y-3 w-full">
+            <Link href={project.link || "#"} key={project.projectName} className="flex flex-col gap-y-3 w-full group cursor-pointer">
               <div className="w-full aspect-[3/4] overflow-hidden rounded-2xl relative bg-stone-900/50">
                 <img
                   src={project.imgSrc}
                   alt={project.projectName}
-                  className="w-full h-full object-cover object-top"
+                  className="w-full h-full object-cover object-top group-hover:scale-105 transition-transform duration-500 ease-out absolute inset-0"
                   loading="lazy"
                 />
               </div>
-              <h4 className="font-display text-white text-2xl font-bold">{project.projectName}</h4>
+              <h4 className="font-display text-white text-2xl font-bold group-hover:text-[#FF0055] transition-colors">{project.projectName}</h4>
               <ul className="text-stone-400 text-sm flex gap-x-2 flex-wrap">
                 {project.projectTags.map((tag, idx) => (
                   <React.Fragment key={tag}>
@@ -214,18 +215,18 @@ const Projects = () => {
                   </React.Fragment>
                 ))}
               </ul>
-            </div>
+            </Link>
           ))}
 
           {/* Mobile Explore Card */}
-          <div className="w-full aspect-[3/4] rounded-2xl bg-[#3600D1] flex flex-col justify-center items-center gap-y-6 p-6">
+          <Link href="/projects" className="w-full aspect-[3/4] rounded-2xl bg-[#3600D1] hover:bg-[#430ce6] transition-colors duration-300 flex flex-col justify-center items-center gap-y-6 p-6 cursor-pointer group">
             <p className="text-white text-3xl font-display font-bold text-center">
               Explore <br /> More <br /> Projects
             </p>
-            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" fill="currentColor" className="w-12 h-12 text-white">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" fill="currentColor" className="w-12 h-12 text-white group-hover:scale-125 transition-transform duration-300">
               <path d="M0 256a256 256 0 1 0 512 0A256 256 0 1 0 0 256zM281 385c-9.4 9.4-24.6 9.4-33.9 0s-9.4-24.6 0-33.9l71-71L136 280c-13.3 0-24-10.7-24-24s10.7-24 24-24l182.1 0-71-71c-9.4-9.4-9.4-24.6 0-33.9s24.6-9.4 33.9 0L393 239c9.4 9.4 9.4 24.6 0 33.9L281 385z" />
             </svg>
-          </div>
+          </Link>
         </div>
       </section>
     );
@@ -234,6 +235,7 @@ const Projects = () => {
   return (
     <section
       ref={containerRef}
+      id="projects-section"
       className="w-full min-h-[200dvh] lg:min-h-[250dvh] 2xl:min-h-[290dvh] grid stack-parent px-10 lg:px-14 xl:px-24 bg-[#141414]"
     >
       {/* Sticky topics and title section */}

@@ -17,6 +17,7 @@ import ProjectsPage from './pages/ProjectsPage';
 import JoinUsPage from './pages/JoinUsPage';
 import BlogsPage from './pages/BlogsPage';
 import ContactPage from './pages/ContactPage';
+import ProjectDetailPage from './pages/ProjectDetailPage';
 
 // Router
 import { RouterProvider, useRouter } from './components/Router';
@@ -27,6 +28,11 @@ function AppContent() {
 
   if (path === '/projects') {
     return <ProjectsPage />;
+  }
+
+  if (path.startsWith('/projects/')) {
+    const projectUid = path.replace('/projects/', '');
+    return <ProjectDetailPage projectUid={projectUid} />;
   }
 
   if (path === '/join-us') {

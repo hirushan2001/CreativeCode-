@@ -2,6 +2,7 @@ import React from 'react';
 import Navbar from '../components/Navbar';
 import Footer from '../components/Footer';
 import WorkTogetherMarquee from '../components/WorkTogetherMarquee';
+import { Link } from '../components/Router';
 import { motion } from 'framer-motion';
 
 const projectsData = [
@@ -9,67 +10,78 @@ const projectsData = [
     title: "Debonair Orlando",
     description: "Creative website for a supper club",
     tags: ["Creative Development"],
-    image: "https://images.prismic.io/creativo-code-official/ZvWhvbVsGrYSwDK8_Frame203.png?auto=format%2Ccompress&fit=max&w=3840"
+    image: "https://images.prismic.io/creativo-code-official/ZvWhvbVsGrYSwDK8_Frame203.png?auto=format%2Ccompress&fit=max&w=3840",
+    link: "/projects/debonair"
   },
   {
     title: "Nexus Spices Website",
     description: "Website for a spice exporting company",
     tags: ["UI/UX", "Web Development"],
-    image: "https://images.prismic.io/creativo-code-official/ZvWhwbVsGrYSwDK-_Frame204.png?auto=format%2Ccompress&fit=max&w=3840"
+    image: "https://images.prismic.io/creativo-code-official/ZvWhwbVsGrYSwDK-_Frame204.png?auto=format%2Ccompress&fit=max&w=3840",
+    link: "/projects/nexus-spices"
   },
   {
     title: "M3R Global",
     description: "Landing page for a supply chain management company",
     tags: ["UI/UX", "Web Development"],
-    image: "https://images.prismic.io/creativo-code-official/ZvWhtrVsGrYSwDK7_Frame202.png?auto=format%2Ccompress&fit=max&w=3840"
+    image: "https://images.prismic.io/creativo-code-official/ZvWhtrVsGrYSwDK7_Frame202.png?auto=format%2Ccompress&fit=max&w=3840",
+    link: "/projects/m3rglobal"
   },
   {
     title: "Dream Shift",
     description: "Website for an agency",
     tags: ["UI/UX", "Web Development"],
-    image: "https://images.prismic.io/creativo-code-official/ZvWh2LVsGrYSwDLC_Frame208.png?auto=format%2Ccompress&fit=max&w=3840"
+    image: "https://images.prismic.io/creativo-code-official/ZvWh2LVsGrYSwDLC_Frame208.png?auto=format%2Ccompress&fit=max&w=3840",
+    link: "/projects/dreamshift"
   },
   {
     title: "Firefly Advocates",
     description: "UI/UX design for a law firm website",
     tags: ["UI/UX"],
-    image: "https://images.prismic.io/creativo-code-official/ZvWhzLVsGrYSwDLA_Frame206.png?auto=format%2Ccompress&fit=max&w=3840"
+    image: "https://images.prismic.io/creativo-code-official/ZvWhzLVsGrYSwDLA_Frame206.png?auto=format%2Ccompress&fit=max&w=3840",
+    link: "/projects/firefly-advocates"
   },
   {
     title: "Deliverables Website",
     description: "Creative website for a production company",
     tags: ["Creative Development"],
-    image: "https://images.prismic.io/creativo-code-official/ZvWhxrVsGrYSwDK__Frame205.png?auto=format%2Ccompress&fit=max&w=3840"
+    image: "https://images.prismic.io/creativo-code-official/ZvWhxrVsGrYSwDK__Frame205.png?auto=format%2Ccompress&fit=max&w=3840",
+    link: "/projects/deliverables-factory"
   },
   {
     title: "P&K Wedding Invitation",
     description: "Wedding invitation website",
     tags: ["Creative Development", "Graphic Design"],
-    image: "https://images.prismic.io/creativo-code-official/ZvW7prVsGrYSwDUg_Frame209.png?auto=format%2Ccompress&fit=max&w=3840"
+    image: "https://images.prismic.io/creativo-code-official/ZvW7prVsGrYSwDUg_Frame209.png?auto=format%2Ccompress&fit=max&w=3840",
+    link: "/projects/pk-wedding"
   },
   {
     title: "G&T Wedding Invitation",
     description: "Wedding invitation website",
     tags: ["Creative Development", "Graphic Design"],
-    image: "https://images.prismic.io/creativo-code-official/ZvWh07VsGrYSwDLB_Frame207.png?auto=format%2Ccompress&fit=max&w=3840"
+    image: "https://images.prismic.io/creativo-code-official/ZvWh07VsGrYSwDLB_Frame207.png?auto=format%2Ccompress&fit=max&w=3840",
+    link: "/projects/gt-wedding"
   },
   {
     title: "K&A Wedding Invitation",
     description: "Wedding invitation website",
     tags: ["Creative Development", "Graphic Design"],
-    image: "https://images.prismic.io/creativo-code-official/ZvXDTbVsGrYSwDW9_Frame211.png?auto=format%2Ccompress&fit=max&w=3840"
+    image: "https://images.prismic.io/creativo-code-official/ZvXDTbVsGrYSwDW9_Frame211.png?auto=format%2Ccompress&fit=max&w=3840",
+    link: "/projects/ka-wedding"
   },
   {
     title: "Paradox Platform",
     description: "Landing page for a fashion business",
     tags: ["Creative Development"],
-    image: "https://images.prismic.io/creativo-code-official/ZvW_RLVsGrYSwDVr_Frame210.png?auto=format%2Ccompress&fit=max&w=3840"
+    image: "https://images.prismic.io/creativo-code-official/ZvW_RLVsGrYSwDVr_Frame210.png?auto=format%2Ccompress&fit=max&w=3840",
+    link: "/projects/paradox-platform"
   },
   {
     title: "Clover Apparel Solution",
     description: "E-commerce site for an apparel business",
     tags: ["UI/UX", "Web Development"],
-    image: "https://images.prismic.io/creativo-code-official/ZvbyXrVsGrYSwFm7_Frame212.png?auto=format%2Ccompress&fit=max&w=3840"
+    image: "https://images.prismic.io/creativo-code-official/ZvbyXrVsGrYSwFm7_Frame212.png?auto=format%2Ccompress&fit=max&w=3840",
+    link: "/projects/clover-apparel"
   }
 ];
 
@@ -98,9 +110,10 @@ const ProjectsPage = () => {
         {/* Projects Cards Grid */}
         <div className="mt-20 grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-16 md:gap-10 w-full">
           {projectsData.map((project, index) => (
-            <div
+            <Link
+              href={project.link}
               key={`${project.title}-${index}`}
-              className="grid stack-parent rounded-3xl overflow-hidden group cursor-pointer relative border border-white/5 shadow-xl hover:shadow-[#FF0055]/5 transition-all duration-300"
+              className="grid stack-parent rounded-3xl overflow-hidden group cursor-pointer relative border border-white/5 shadow-xl hover:shadow-[#FF0055]/5 transition-all duration-300 w-full"
               style={{ aspectRatio: "1581 / 2114" }}
             >
               {/* Card Image */}
@@ -134,7 +147,7 @@ const ProjectsPage = () => {
                   </ul>
                 </div>
               </div>
-            </div>
+            </Link>
           ))}
         </div>
 
